@@ -19,6 +19,7 @@ public class CourseFactory {
         course1.setTitle("Soft Eng");
         course1.setCredit(3);
         course1.setTuitionPerCredit(1500);
+        course1.setSubTotal();
 
 
         Course course2 = new Course();
@@ -26,6 +27,7 @@ public class CourseFactory {
         course2.setTitle("Compiler Construction");
         course2.setCredit(3);
         course2.setTuitionPerCredit(1500);
+        course2.setSubTotal();
 
 
         Course course3 = new Course();
@@ -33,6 +35,7 @@ public class CourseFactory {
         course3.setTitle("Operating System");
         course3.setCredit(3);
         course3.setTuitionPerCredit(1500);
+        course3.setSubTotal();
 
 
         Course course4 = new Course();
@@ -40,6 +43,7 @@ public class CourseFactory {
         course4.setTitle("Programming Language Principles");
         course4.setCredit(3);
         course4.setTuitionPerCredit(1500);
+        course4.setSubTotal();
 
 
         cList.add(course1);
