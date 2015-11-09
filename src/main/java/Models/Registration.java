@@ -28,14 +28,15 @@ public class Registration {
     public int getTotal(){
         int total = 0;
         for(Course course:courseList){
-            total += course.getTuitionPerCredit();
+            total += course.getSubTotal();
         }
         return total;
     }
 
     public int getExtraFeeAmount() {
         iefc = CourseFactory.getInstance().getExtraFeeCalculator();
-        return iefc.getExtraAmount(this.getTotal());
+        int total = this.getTotal();
+        return iefc.getExtraAmount(total);
     }
 
     public int getGrandTotal() {

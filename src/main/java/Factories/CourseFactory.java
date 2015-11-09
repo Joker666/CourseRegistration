@@ -1,7 +1,9 @@
 package Factories;
 
+import Adapters.BDTaxAdapter;
 import Interfaces.IExtraFreeCalculator;
 import Models.Course;
+import Utilities.DevelopmentFreeCalculator;
 
 import java.util.LinkedList;
 import java.util.Objects;
@@ -9,9 +11,11 @@ import java.util.Objects;
 public class CourseFactory {
     LinkedList<Course> cList;
     IExtraFreeCalculator efCalculator;
+    IExtraFreeCalculator efc;
     private static CourseFactory instance = null;
 
     public CourseFactory(){
+        efc = new BDTaxAdapter();
         cList = new LinkedList<>();
 
         Course course1 = new Course();
@@ -70,7 +74,7 @@ public class CourseFactory {
 
     public IExtraFreeCalculator getExtraFeeCalculator(){
         if (efCalculator == null){
-            String className = System.getProperty(IExtraFreeCalculator.class.getName());
+            String className = efc.getClass().getName();;
             try {
                 efCalculator = (IExtraFreeCalculator) Class.forName(className).newInstance();
             } catch (InstantiationException | ClassNotFoundException | IllegalAccessException e) {

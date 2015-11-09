@@ -19,8 +19,15 @@ public class Main {
 
         LinkedList<Course> courses = rcc.getRegistration().getCourseList();
 
+        int grandTotal = rcc.getRegistration().getGrandTotal();
+        int devOrTax = rcc.getRegistration().getExtraFeeAmount();
+
         enableCORS("*", "*", "*");
         get("/", (req, res) -> courses, json());
+
+        get("/grandTotal/", (req, res) -> grandTotal, json());
+
+        get("/getTaxOrFee/", (req, res) -> devOrTax, json());
 
         post("/addCourse/:id", (request, response) -> {
             String courseId = request.params(":id");

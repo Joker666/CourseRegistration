@@ -22,6 +22,17 @@ $(document).ready(function(){
         $("#total").html("Total : " + total);
     });
 
+    $.get( "http://localhost:4567/grandTotal/", function( data ) {
+        var grandTotal = JSON.parse(data);
+        $("#grandTotal").html("Grand Total : " + grandTotal);
+    });
+
+    $.get( "http://localhost:4567/getTaxOrFee/", function( data ) {
+        var fee = JSON.parse(data);
+        $("#fee").html("Development Fee/ BD Tax : " + fee);
+    });
+
+
     $("#add").click(function(){
         var courseId = $("input").val();
         $.post( "http://localhost:4567/addCourse/" + courseId)

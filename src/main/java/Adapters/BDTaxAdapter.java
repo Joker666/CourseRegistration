@@ -3,7 +3,9 @@ package Adapters;
 import Interfaces.IExtraFreeCalculator;
 import Utilities.BDTaxCalculator;
 
-public class BDTaxAdapters implements IExtraFreeCalculator{
+public class BDTaxAdapter implements IExtraFreeCalculator{
+
+    public BDTaxAdapter(){}
 
     @Override
     public int getExtraAmount(int courseTotal) {
