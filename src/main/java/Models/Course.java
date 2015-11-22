@@ -6,6 +6,15 @@ public class Course {
     public int credit;
     public int tuitionPerCredit;
     public int subTotal;
+    public double GPA;
+
+    public double getGPA() {
+        return GPA;
+    }
+
+    public void setGPA(double GPA) {
+        this.GPA = GPA;
+    }
 
     public String getId() {
         return id;

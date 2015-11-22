@@ -21,6 +21,7 @@ public class CourseFactory {
         course1.setId("CSE 327");
         course1.setTitle("Soft Eng");
         course1.setCredit(3);
+        course1.setGPA(2.5);
         course1.setTuitionPerCredit(1500);
         course1.setSubTotal();
 
@@ -29,6 +30,7 @@ public class CourseFactory {
         course2.setId("CSE 326");
         course2.setTitle("Compiler Construction");
         course2.setCredit(3);
+        course2.setGPA(2.5);
         course2.setTuitionPerCredit(1500);
         course2.setSubTotal();
 
@@ -37,6 +39,7 @@ public class CourseFactory {
         course3.setId("CSE 323");
         course3.setTitle("Operating System");
         course3.setCredit(3);
+        course3.setGPA(2.5);
         course3.setTuitionPerCredit(1500);
         course3.setSubTotal();
 
@@ -45,6 +48,7 @@ public class CourseFactory {
         course4.setId("CSE 325");
         course4.setTitle("Programming Language Principles");
         course4.setCredit(3);
+        course4.setGPA(2.5);
         course4.setTuitionPerCredit(1500);
         course4.setSubTotal();
 

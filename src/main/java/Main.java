@@ -20,10 +20,20 @@ public class Main {
 
         post("/addCourse/:id", (request, response) -> {
             String courseId = request.params(":id");
+
+            // Added course has to exist in courseFactory
             if(!courseId.isEmpty() && rcc.getCourse(courseId) != null) {
+
+                // Cannot add duplicate course
                 if(rcc.getRegistration().getCourseFromRegisteredCoursesById(courseId) == null) {
-                    rcc.addCourse(courseId);
-                    return rcc.getCourse(courseId);
+
+                    // Registration courses cannot exceed five
+                    if(rcc.getRegistration().getCourseList().size() <= 4){
+                        rcc.addCourse(courseId);
+                        return rcc.getCourse(courseId);
+                    } else {
+                        throw new YouCanOnlyTakeFiveCourses();
+                    }
                 } else {
                     throw new CourseAlreadyAddedException();
                 }
@@ -37,6 +47,11 @@ public class Main {
         exception(NotFoundException.class, (e, request, response) -> {
             response.status(404);
             response.body("Resource not found!");
+        });
+
+        exception(YouCanOnlyTakeFiveCourses.class, (e, request, response) -> {
+            response.status(404);
+            response.body("You Can Only Take Five Courses!");
         });
 
         exception(CourseAlreadyAddedException.class, (e, request, response) -> {
@@ -57,4 +72,7 @@ public class Main {
     private static class NotFoundException extends Exception { }
 
     private static class CourseAlreadyAddedException extends Exception { }
+
+    private static class YouCanOnlyTakeFiveCourses extends Exception {
+    }
 }

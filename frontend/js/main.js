@@ -16,6 +16,7 @@ $(document).ready(function(){
                 "<td>" + course.id + "</td>" +
                 "<td>" + course.title + "</td>" +
                 "<td>" + course.credit + "</td>" +
+                "<td>" + course.GPA + "</td>" +
                 "<td>" + course.tuitionPerCredit + "</td>" +
                 "<td>" + course.subTotal + "</td>" +
                 "</tr>");
@@ -43,6 +44,7 @@ $(document).ready(function(){
                         "<td>" + c.id + "</td>" +
                         "<td>" + c.title + "</td>" +
                         "<td>" + c.credit + "</td>" +
+                        "<td>" + c.GPA + "</td>" +
                         "<td>" + c.tuitionPerCredit + "</td>" +
                         "<td>" + c.subTotal + "</td>" +
                         "</tr>");
