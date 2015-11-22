@@ -17,27 +17,39 @@ public class Main {
         rcc.addCourse("CSE 327");
         rcc.addCourse("CSE 323");
 
-        LinkedList<Course> courses = rcc.getRegistration().getCourseList();
-
-        int grandTotal = rcc.getRegistration().getGrandTotal();
-        int devOrTax = rcc.getRegistration().getExtraFeeAmount();
-
         enableCORS("*", "*", "*");
-        get("/", (req, res) -> courses, json());
+        get("/", (req, res) -> rcc.getRegistration().getCourseList(), json());
 
-        get("/grandTotal/", (req, res) -> grandTotal, json());
+        get("/grandTotal/", (req, res) -> rcc.getRegistration().getGrandTotal(), json());
 
-        get("/getTaxOrFee/", (req, res) -> devOrTax, json());
+        get("/getTaxOrFee/", (req, res) -> rcc.getRegistration().getExtraFeeAmount(), json());
 
         post("/addCourse/:id", (request, response) -> {
             String courseId = request.params(":id");
             if(!courseId.isEmpty() && rcc.getCourse(courseId) != null) {
-                rcc.addCourse(courseId);
-                return rcc.getCourse(courseId);
+                if(rcc.getRegistration().getCourseFromRegisteredCoursesById(courseId) == null) {
+                    rcc.addCourse(courseId);
+                    return rcc.getCourse(courseId);
+                } else {
+                    throw new CourseAlreadyAddedException();
+                }
             }
 
-            return null;
+            throw new NotFoundException();
         }, json());
+
+
+
+        exception(NotFoundException.class, (e, request, response) -> {
+            response.status(404);
+            response.body("Resource not found!");
+        });
+
+        exception(CourseAlreadyAddedException.class, (e, request, response) -> {
+            response.status(404);
+            response.body("Course Already Added!");
+        });
+
     }
 
     private static void enableCORS(final String origin, final String methods, final String headers) {
@@ -50,4 +62,8 @@ public class Main {
             }
         });
     }
+
+    private static class NotFoundException extends Exception { }
+
+    private static class CourseAlreadyAddedException extends Exception { }
 }

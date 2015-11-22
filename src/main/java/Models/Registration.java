@@ -4,6 +4,7 @@ import Factories.CourseFactory;
 import Interfaces.IExtraFreeCalculator;
 
 import java.util.LinkedList;
+import java.util.Objects;
 
 public class Registration {
     LinkedList<Course> courseList;
@@ -41,5 +42,14 @@ public class Registration {
 
     public int getGrandTotal() {
         return this.getTotal() + this.getExtraFeeAmount();
+    }
+
+    public Course getCourseFromRegisteredCoursesById(String id) {
+        for(Course course:courseList){
+            if(Objects.equals(course.getId(), id)){
+                return course;
+            }
+        }
+        return null;
     }
 }

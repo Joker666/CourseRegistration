@@ -1,9 +1,8 @@
 package Factories;
 
-import Adapters.BDTaxAdapter;
 import Interfaces.IExtraFreeCalculator;
 import Models.Course;
-import Utilities.DevelopmentFreeCalculator;
+import config.Configuration;
 
 import java.util.LinkedList;
 import java.util.Objects;
@@ -15,7 +14,7 @@ public class CourseFactory {
     private static CourseFactory instance = null;
 
     public CourseFactory(){
-        efc = new BDTaxAdapter();
+        efc = Configuration.getBDTaxAdapter();
         cList = new LinkedList<>();
 
         Course course1 = new Course();
