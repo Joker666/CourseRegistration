@@ -1,19 +1,8 @@
 $(document).ready(function(){
     var total = 0;
-    var self = this;
 
     $("#new").click(function(){
         $("input").val("");
-    });
-
-    $("#calculateDiscount").click(function(){
-        updateDiscount().then(function () {
-            updateTaxOrFee().then(function() {
-                updateGrandTotal().then(function () {
-                    playSound();
-                });
-            });
-        });
     });
 
     $.get( "http://localhost:4567/", function( data ) {
@@ -33,12 +22,6 @@ $(document).ready(function(){
         });
 
         $("#total").html("Total : " + total);
-    });
-
-    updateDiscount().then(function () {
-        updateTaxOrFee().then(function() {
-            updateGrandTotal();
-        });
     });
 
     $("#add").click(function(){
@@ -68,16 +51,42 @@ $(document).ready(function(){
                 updateGrandTotal();
             }).then(function () {
                 updateTaxOrFee();
+            }).then(function () {
+                updateCGPA();
             });
     });
 
-    function playSound() {
-        var sound = document.getElementById("audio");
-        sound.play();
+    updateCGPA().then(function () {
+        updateDiscount(getDiscountPolicies()).then(function () {
+            updateTaxOrFee().then(function() {
+                updateGrandTotal();
+            });
+        })
+    });
+
+    $("#calculateDiscount").click(function(){
+        updateDiscount(getDiscountPolicies()).then(function () {
+            updateTaxOrFee().then(function() {
+                updateGrandTotal().then(function () {
+                    playSound();
+                });
+            });
+        });
+    });
+
+    function getDiscountPolicies() {
+        var dps = [$("select").val()];
+
+        var discountPolicyMap = {};
+        var i = 0;
+
+        dps.forEach(function(dp) { i++; discountPolicyMap["discountPolicy" + i] = dp; });
+
+        return discountPolicyMap;
     }
 
-    function updateDiscount() {
-        return $.post( "http://localhost:4567/calculateDiscount/", { discountPolicy: $("select").val()}).then(function (data) {
+    function updateDiscount(discountPolicyMap) {
+        return $.post( "http://localhost:4567/calculateDiscount/", discountPolicyMap).then(function (data) {
             var discount = JSON.parse(data);
             $("#discount").html("Discount : " + discount);
         });
@@ -90,10 +99,22 @@ $(document).ready(function(){
         });
     }
 
+    function updateCGPA() {
+        return $.get( "http://localhost:4567/getCGPA/", function( data ) {
+            var CGPA = JSON.parse(data).toFixed(2);
+            $("#CGPA").html("CGPA: " + CGPA);
+        });
+    }
+
     function updateTaxOrFee() {
         return $.get( "http://localhost:4567/getTaxOrFee/", function( data ) {
             var fee = JSON.parse(data);
             $("#fee").html("Development Fee/ BD Tax : " + fee);
         });
+    }
+
+    function playSound() {
+        var sound = document.getElementById("audio");
+        sound.play();
     }
 });

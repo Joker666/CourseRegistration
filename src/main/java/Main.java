@@ -1,6 +1,10 @@
 import Controllers.RegistrationCourseController;
 import Enums.DiscountPolicy;
-import Utilities.JsonUtil;
+
+import java.io.UnsupportedEncodingException;
+import java.net.URL;
+import java.net.URLDecoder;
+import java.util.*;
 
 import static Utilities.JsonUtil.json;
 import static spark.Spark.*;
@@ -19,6 +23,8 @@ public class Main {
         get("/grandTotal/", (req, res) -> rcc.getRegistration().getGrandTotal(), json());
 
         get("/getTaxOrFee/", (req, res) -> rcc.getRegistration().getExtraFeeAmount(), json());
+
+        get("/getCGPA/", (req, res) -> rcc.getRegistration().getCGPA(), json());
 
         post("/addCourse/:id", (request, response) -> {
             String courseId = request.params(":id");
@@ -46,8 +52,12 @@ public class Main {
 
         post("/calculateDiscount/", (request, response) -> {
             String req = request.body();
-            String discountPolicy = req.split("=")[1];
-            rcc.getRegistration().setDiscountPolicy(DiscountPolicy.valueOf(discountPolicy));
+            Map<String, String> discountPolicyMap  = getQueryMap(req);
+            rcc.getRegistration().emptyDiscountPolicies();
+            for(String key : discountPolicyMap.keySet()) {
+                String discountPolicy = discountPolicyMap.get(key);
+                rcc.getRegistration().addDiscountPolicy(DiscountPolicy.valueOf(discountPolicy));
+            }
 
             return rcc.getRegistration().getTotalWithoutDiscount() - rcc.getRegistration().getTotal();
         });
@@ -77,6 +87,18 @@ public class Main {
             response.header("Access-Control-Request-Method", methods);
             response.header("Access-Control-Allow-Headers", headers);
         });
+    }
+
+    public static Map<String, String> getQueryMap(String query) {
+        String[] params = query.split("&");
+        Map<String, String> map = new HashMap<String, String>();
+        for (String param : params)
+        {
+            String name = param.split("=")[0];
+            String value = param.split("=")[1];
+            map.put(name, value);
+        }
+        return map;
     }
 
     private static class NotFoundException extends Exception { }

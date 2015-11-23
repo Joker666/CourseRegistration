@@ -14,7 +14,7 @@ public class CourseFactory {
     private static CourseFactory instance = null;
 
     public CourseFactory(){
-        efc = Configuration.getBDTaxAdapter();
+        efc = Configuration.getExtraFee();
         cList = new LinkedList<>();
 
         Course course1 = new Course();
@@ -52,11 +52,20 @@ public class CourseFactory {
         course4.setTuitionPerCredit(1500);
         course4.setSubTotal();
 
+        Course course5 = new Course();
+        course5.setId("CSE 440");
+        course5.setTitle("Artificial Intelligence");
+        course5.setCredit(3);
+        course5.setGPA(3.9);
+        course5.setTuitionPerCredit(1500);
+        course5.setSubTotal();
+
 
         cList.add(course1);
         cList.add(course2);
         cList.add(course3);
         cList.add(course4);
+        cList.add(course5);
     }
 
     public Course getCourse(String id){
