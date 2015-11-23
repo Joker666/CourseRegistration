@@ -14,6 +14,7 @@
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
     </head>
     <body>
+    <audio id="audio" src="audio/beep-07.wav" autostart="false" ></audio>
 
     <div class="container">
 
@@ -43,24 +44,26 @@
                     <td></td>
                     <td id="total">Total : </td>
                 </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td id="fee">Development Fee/ BD Tax : </td>
-                </tr>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td id="grandTotal">Grand Total : </td>
-                </tr>
             </tbody>
         </table>
+
+        <div class="downTheTable row">
+            <div class="left col-md-8">
+                <select class="form-control">
+                    <option value="ACADEMICEXCELLENCE">Academic Excellence</option>
+                    <option value="FREEDOMFIGHTER">Freedom Fighters</option>
+                    <option value="ABORIGINALGROUP">Aboriginal Group</option>
+                </select>
+
+                <button class="btn btn-primary" type="submit" id="calculateDiscount">Calculate Discount</button>
+            </div>
+            <div class="right col-md-4">
+                <div id="fee">Development Fee/ BD Tax : </div>
+                <div id="discount">Discount : </div>
+                <div id="grandTotal">Grand Total : </div>
+            </div>
+        </div>
+
     </div> <!-- /container -->
         <script src="js/vendor/jquery-1.11.2.js"></script>
 

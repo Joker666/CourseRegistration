@@ -7,7 +7,7 @@ public class AcademicExcellenceDiscount implements IDiscountStrategy{
 
     @Override
     public int getTotal(Registration registration) {
-        if(registration.getCGPA() >= 3.75 ) {
+        if(registration.getCGPA() >= 3.50 ) {
             return (int) (registration.getTotalWithoutDiscount() * 0.5);
         }
         return  registration.getTotalWithoutDiscount();

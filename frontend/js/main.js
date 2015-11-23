@@ -6,6 +6,16 @@ $(document).ready(function(){
         $("input").val("");
     });
 
+    $("#calculateDiscount").click(function(){
+        updateDiscount().then(function () {
+            updateTaxOrFee().then(function() {
+                updateGrandTotal().then(function () {
+                    playSound();
+                });
+            });
+        });
+    });
+
     $.get( "http://localhost:4567/", function( data ) {
         var courses = JSON.parse(data);
 
@@ -25,9 +35,11 @@ $(document).ready(function(){
         $("#total").html("Total : " + total);
     });
 
-    updateGrandTotal();
-
-    updateTaxOrFee();
+    updateDiscount().then(function () {
+        updateTaxOrFee().then(function() {
+            updateGrandTotal();
+        });
+    });
 
     $("#add").click(function(){
         var courseId = $("input").val();
@@ -58,6 +70,18 @@ $(document).ready(function(){
                 updateTaxOrFee();
             });
     });
+
+    function playSound() {
+        var sound = document.getElementById("audio");
+        sound.play();
+    }
+
+    function updateDiscount() {
+        return $.post( "http://localhost:4567/calculateDiscount/", { discountPolicy: $("select").val()}).then(function (data) {
+            var discount = JSON.parse(data);
+            $("#discount").html("Discount : " + discount);
+        });
+    }
 
     function updateGrandTotal() {
         return $.get( "http://localhost:4567/grandTotal/", function( data ) {

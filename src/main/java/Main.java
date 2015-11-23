@@ -1,4 +1,6 @@
 import Controllers.RegistrationCourseController;
+import Enums.DiscountPolicy;
+import Utilities.JsonUtil;
 
 import static Utilities.JsonUtil.json;
 import static spark.Spark.*;
@@ -41,6 +43,14 @@ public class Main {
 
             throw new NotFoundException();
         }, json());
+
+        post("/calculateDiscount/", (request, response) -> {
+            String req = request.body();
+            String discountPolicy = req.split("=")[1];
+            rcc.getRegistration().setDiscountPolicy(DiscountPolicy.valueOf(discountPolicy));
+
+            return rcc.getRegistration().getTotalWithoutDiscount() - rcc.getRegistration().getTotal();
+        });
 
 
 

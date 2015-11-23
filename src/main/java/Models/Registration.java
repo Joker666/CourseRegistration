@@ -15,7 +15,7 @@ public class Registration {
     LinkedList<Course> courseList;
     IExtraFreeCalculator iefc;
     IDiscountStrategy discountStrategy;
-    DiscountPolicy discountPolicy;
+    DiscountPolicy _discountPolicy;
 
     public Registration(){
         courseList = new LinkedList<>();
@@ -29,12 +29,16 @@ public class Registration {
         this.courseList = courseList;
     }
 
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        _discountPolicy = discountPolicy;
+    }
+
     public void addCourse(Course course){
         courseList.add(course);
     }
 
     public int getTotal(){
-        switch (discountPolicy){
+        switch (_discountPolicy){
             case ACADEMICEXCELLENCE:
                 discountStrategy = new AcademicExcellenceDiscount();
                 break;
@@ -45,6 +49,8 @@ public class Registration {
                 discountStrategy = new AboriginalDiscount();
                 break;
         }
+
+        int bla = discountStrategy.getTotal(this);
 
         return discountStrategy.getTotal(this);
     }
