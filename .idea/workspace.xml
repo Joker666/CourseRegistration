@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8e7fc7ea-213a-4b57-91a1-537fde7e897a" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/config/Configuration.class" afterPath="$PROJECT_DIR$/target/classes/config/Configuration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Factories/CourseFactory.class" afterPath="$PROJECT_DIR$/target/classes/Factories/CourseFactory.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$CourseAlreadyAddedException.class" afterPath="$PROJECT_DIR$/target/classes/Main$CourseAlreadyAddedException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main$NotFoundException.class" afterPath="$PROJECT_DIR$/target/classes/Main$NotFoundException.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Main.class" afterPath="$PROJECT_DIR$/target/classes/Main.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/target/classes/Models/Registration.class" afterPath="$PROJECT_DIR$/target/classes/Models/Registration.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Factories/CourseFactory.java" afterPath="$PROJECT_DIR$/src/main/java/Factories/CourseFactory.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/Models/Registration.java" afterPath="$PROJECT_DIR$/src/main/java/Models/Registration.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/index.html" afterPath="$PROJECT_DIR$/frontend/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/frontend/js/main.js" afterPath="$PROJECT_DIR$/frontend/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="CourseRegistration.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,52 +28,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CourseFactory.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/Factories/CourseFactory.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="method#getCourse#0;class#CourseFactory#0" expanded="false" />
-                <element signature="method#getInstance#0;class#CourseFactory#0" expanded="false" />
-                <element signature="method#getExtraFeeCalculator#0;class#CourseFactory#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.31203565">
-              <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-              <folding>
-                <element signature="e#80#115#0" expanded="false" />
-                <element signature="e#173#769#0" expanded="false" />
-                <element signature="e#803#1922#0" expanded="false" />
-                <element signature="e#1960#2142#0" expanded="false" />
-                <element signature="e#2190#2444#0" expanded="false" />
-                <element signature="e#2760#2992#0" expanded="false" />
-                <element signature="e#3026#3236#0" expanded="false" />
-                <element signature="e#3264#3456#0" expanded="false" />
-                <element signature="e#3488#3690#0" expanded="false" />
-                <element signature="e#3717#3800#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/frontend/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-15.625">
-              <caret line="42" column="40" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Registration.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Models/Registration.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -99,11 +44,32 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="main.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.69727045">
+              <caret line="84" column="89" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
+              <folding>
+                <element signature="e#80#115#0" expanded="false" />
+                <element signature="e#173#769#0" expanded="false" />
+                <element signature="e#803#1922#0" expanded="false" />
+                <element signature="e#1960#2142#0" expanded="false" />
+                <element signature="e#2190#2444#0" expanded="false" />
+                <element signature="e#2813#3045#0" expanded="false" />
+                <element signature="e#3079#3289#0" expanded="false" />
+                <element signature="e#3317#3509#0" expanded="false" />
+                <element signature="e#3541#3743#0" expanded="false" />
+                <element signature="e#3770#3853#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
+              <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#enableCORS#0;class#Main#0" expanded="false" />
@@ -738,12 +704,12 @@
       <workItem from="1448200237228" duration="15289000" />
       <workItem from="1448236162359" duration="3912000" />
       <workItem from="1448240157692" duration="5227000" />
-      <workItem from="1448285293181" duration="2958000" />
+      <workItem from="1448285293181" duration="3877000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="47479000" />
+    <option name="totallyTimeSpent" value="48398000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="20" y="23" width="1400" height="796" extended-state="0" />
@@ -766,7 +732,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.38516405" sideWeight="0.49263623" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.38516405" sideWeight="0.49263623" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -788,7 +754,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="61" />
+      <option name="time" value="63" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -864,11 +830,11 @@
             <element signature="e#803#1922#0" expanded="false" />
             <element signature="e#1960#2142#0" expanded="false" />
             <element signature="e#2190#2444#0" expanded="false" />
-            <element signature="e#2760#2992#0" expanded="false" />
-            <element signature="e#3026#3236#0" expanded="false" />
-            <element signature="e#3264#3456#0" expanded="false" />
-            <element signature="e#3488#3690#0" expanded="false" />
-            <element signature="e#3717#3800#0" expanded="false" />
+            <element signature="e#2813#3045#0" expanded="false" />
+            <element signature="e#3079#3289#0" expanded="false" />
+            <element signature="e#3317#3509#0" expanded="false" />
+            <element signature="e#3541#3743#0" expanded="false" />
+            <element signature="e#3770#3853#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1241,16 +1207,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/config/Configuration.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.35661218">
-          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_60.jdk/Contents/Home/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.3325062">
@@ -1272,23 +1228,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/frontend/index.html">
+    <entry file="file://$PROJECT_DIR$/src/main/java/config/Configuration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-15.625">
-          <caret line="42" column="40" selection-start-line="42" selection-start-column="34" selection-end-line="42" selection-end-column="40" />
-          <folding />
+        <state vertical-scroll-proportion="0.35661218">
+          <caret line="19" column="34" selection-start-line="19" selection-start-column="34" selection-end-line="19" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+    <entry file="file://$PROJECT_DIR$/frontend/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="64" selection-start-line="26" selection-start-column="64" selection-end-line="26" selection-end-column="64" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="method#enableCORS#0;class#Main#0" expanded="false" />
-            <element signature="method#getQueryMap#0;class#Main#0" expanded="false" />
-          </folding>
+        <state vertical-scroll-proportion="0.5084746">
+          <caret line="52" column="37" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1306,21 +1260,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="56" column="0" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#enableCORS#0;class#Main#0" expanded="false" />
+            <element signature="method#getQueryMap#0;class#Main#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/frontend/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.31203565">
-          <caret line="77" column="38" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+        <state vertical-scroll-proportion="0.69727045">
+          <caret line="84" column="89" selection-start-line="84" selection-start-column="89" selection-end-line="84" selection-end-column="89" />
           <folding>
             <element signature="e#80#115#0" expanded="false" />
             <element signature="e#173#769#0" expanded="false" />
             <element signature="e#803#1922#0" expanded="false" />
             <element signature="e#1960#2142#0" expanded="false" />
             <element signature="e#2190#2444#0" expanded="false" />
-            <element signature="e#2760#2992#0" expanded="false" />
-            <element signature="e#3026#3236#0" expanded="false" />
-            <element signature="e#3264#3456#0" expanded="false" />
-            <element signature="e#3488#3690#0" expanded="false" />
-            <element signature="e#3717#3800#0" expanded="false" />
+            <element signature="e#2813#3045#0" expanded="false" />
+            <element signature="e#3079#3289#0" expanded="false" />
+            <element signature="e#3317#3509#0" expanded="false" />
+            <element signature="e#3541#3743#0" expanded="false" />
+            <element signature="e#3770#3853#0" expanded="false" />
           </folding>
         </state>
       </provider>

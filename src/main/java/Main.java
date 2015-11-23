@@ -1,10 +1,8 @@
 import Controllers.RegistrationCourseController;
 import Enums.DiscountPolicy;
 
-import java.io.UnsupportedEncodingException;
-import java.net.URL;
-import java.net.URLDecoder;
-import java.util.*;
+import java.util.HashMap;
+import java.util.Map;
 
 import static Utilities.JsonUtil.json;
 import static spark.Spark.*;

@@ -75,7 +75,9 @@ $(document).ready(function(){
     });
 
     function getDiscountPolicies() {
-        var dps = [$("select").val()];
+        var selects = [$("select").val()];
+
+        var dps = [].concat.apply([], selects);
 
         var discountPolicyMap = {};
         var i = 0;
