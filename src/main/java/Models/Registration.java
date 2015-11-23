@@ -1,8 +1,6 @@
 package Models;
 
-import Discounts.AboriginalDiscount;
-import Discounts.AcademicExcellenceDiscount;
-import Discounts.FreedomFighterDiscount;
+import Discounts.*;
 import Enums.DiscountPolicy;
 import Factories.CourseFactory;
 import Interfaces.IDiscountStrategy;
@@ -47,10 +45,13 @@ public class Registration {
                 break;
             case ABORIGINALGROUP:
                 discountStrategy = new AboriginalDiscount();
+//                CompositeDiscount compositeDiscount = new BestForNSU();
+//                compositeDiscount.add(new AcademicExcellenceDiscount());
+//                compositeDiscount.add(new FreedomFighterDiscount());
+//                compositeDiscount.add(new AboriginalDiscount());
+//                discountStrategy = compositeDiscount;
                 break;
         }
-
-        int bla = discountStrategy.getTotal(this);
 
         return discountStrategy.getTotal(this);
     }
